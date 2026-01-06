@@ -53,7 +53,7 @@ jobs:
           head -n 200 pr.diff
 
           echo "🤖 Running GLM-powered code review..."
-          claude --non-interactive "
+          claude "
           Please review the code changes provided in pr.diff and output a Markdown report.
 
           1. Identify potential bugs (including edge cases, null handling, and concurrency issues).
