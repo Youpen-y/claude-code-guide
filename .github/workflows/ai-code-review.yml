@@ -62,6 +62,7 @@ jobs:
           4. If the overall code quality is good, clearly state **LGTM** at the end.
 
           Requirements:
+          - The output MUST start with the following Markdown heading exactly: # 🤖 AI Code Review Report
           - Use clear section headings
           - Do not repeat the diff content
           - Do not include unrelated explanations
@@ -79,5 +80,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `### 🤖 AI Code Review (GLM Powered)\n\n${body}`
+              body: `${body}`
             });
