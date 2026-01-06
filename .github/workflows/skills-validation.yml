@@ -1,0 +1,45 @@
+name: Skills Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'skills/**'
+  push:
+    branches:
+      - experiment/**  # Run on experiment branches
+    paths:
+      - 'skills/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  validate-skills:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Skills Validator
+        run: |
+          echo "🔍 Validating skills..."
+          node scripts/validate-skills.js
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Skills Validation Result" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ ${{ job.status }} == "success" ]; then
+            echo "✅ All skills passed validation!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Validation failed. Check logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
