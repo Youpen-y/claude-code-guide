@@ -10,16 +10,17 @@ The status section below is updated by a daily GitHub Action.
 
 ### 🔄 Last Sync
 
-- **UTC**: `2026-07-21 03:43:05 UTC`
-- **Europe/Oslo**: `2026-07-21 05:43:05 CEST`
-- **Workflow Run**: [#196](https://github.com/Youpen-y/claude-code-guide/actions/runs/29799252825)
+- **UTC**: `2026-07-22 03:44:11 UTC`
+- **Europe/Oslo**: `2026-07-22 05:44:11 CEST`
+- **Workflow Run**: [#197](https://github.com/Youpen-y/claude-code-guide/actions/runs/29889204977)
 
 ### ✅ Files Updated This Run
 
-- **CHANGELOG.md**: +43 / -0
-**Total changes**: +43 / -0 lines
+- **CHANGELOG.md**: +24 / -0
+**Total changes**: +24 / -0 lines
 
 <!-- sync-status:end -->
+
 
 
 
